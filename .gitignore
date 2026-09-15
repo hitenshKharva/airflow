@@ -133,8 +133,9 @@ ENV/
 
 # Claude Code — ignore local config/caches/worktrees, but keep the
 # tracked symlinks in .claude/skills/ that point at .agents/skills/,
-# and the committed apache-magpie plugin floor in settings.json
-# (per-machine settings belong in the ignored settings.local.json).
+# the committed apache-magpie plugin floor in settings.json
+# (per-machine settings belong in the ignored settings.local.json),
+# and the custom subagents in .claude/agents/.
 .claude/*
 !.claude/settings.json
 !.claude/skills/
@@ -143,6 +144,8 @@ ENV/
 !.claude/skills/airflow-translations
 !.claude/skills/prepare-providers-documentation
 !.claude/skills/upgrade-fab-provider
+!.claude/agents/
+!.claude/agents/*.md
 
 # Claude Code write-tracking scratch dirs. Created next to whatever
 # directory a tool call ran in, so they turn up anywhere in the tree —
